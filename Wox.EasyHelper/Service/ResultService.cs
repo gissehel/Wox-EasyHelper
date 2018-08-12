@@ -44,7 +44,7 @@ namespace Wox.EasyHelper.Service
                         }
                         else
                         {
-                            action();
+                            action?.Invoke();
                             return result.ShouldClose;
                         }
                     }
