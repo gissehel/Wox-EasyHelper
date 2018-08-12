@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Wox.EasyHelper.DomainModel
+namespace Wox.EasyHelper
 {
     public class WoxQuery
     {

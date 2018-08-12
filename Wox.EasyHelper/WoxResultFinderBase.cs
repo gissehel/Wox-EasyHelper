@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Wox.EasyHelper.Core.Service;
-using Wox.EasyHelper.DomainModel;
 
 namespace Wox.EasyHelper
 {

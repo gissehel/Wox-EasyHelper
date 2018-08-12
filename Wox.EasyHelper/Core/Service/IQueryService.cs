@@ -1,5 +1,4 @@
-﻿using Wox.EasyHelper.DomainModel;
-using Wox.Plugin;
+﻿using Wox.Plugin;
 
 namespace Wox.EasyHelper.Core.Service
 {

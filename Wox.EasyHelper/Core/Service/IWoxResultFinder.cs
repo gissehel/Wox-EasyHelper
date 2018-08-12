@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Wox.EasyHelper.DomainModel;
 
 namespace Wox.EasyHelper.Core.Service
 {

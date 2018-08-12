@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Wox.EasyHelper.DomainModel
+namespace Wox.EasyHelper
 {
     public class WoxResult
     {

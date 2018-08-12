@@ -1,6 +1,5 @@
 ﻿using System;
 using Wox.EasyHelper.Core.Service;
-using Wox.EasyHelper.DomainModel;
 using Wox.Plugin;
 
 namespace Wox.EasyHelper.Service

@@ -1,7 +1,4 @@
-﻿using System;
-using Wox.EasyHelper.DomainModel;
-
-namespace Wox.EasyHelper.Core.Service
+﻿namespace Wox.EasyHelper.Core.Service
 {
     public interface IWoxContextService
     {

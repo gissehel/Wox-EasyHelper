@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Wox.UnitConverter.Wox.EasyHelper.Tool
+﻿namespace Wox.EasyHelper
 {
     public static class Extensions
     {

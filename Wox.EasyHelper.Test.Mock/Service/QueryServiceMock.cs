@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using Wox.EasyHelper.DomainModel;
 
-namespace Wox.Workspacer.Mock.Service
+namespace Wox.EasyHelper.Test.Mock.Service
 {
     public class QueryServiceMock
     {

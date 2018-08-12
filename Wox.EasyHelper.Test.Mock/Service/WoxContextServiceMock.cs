@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Wox.EasyHelper.Core.Service;
-using Wox.EasyHelper.DomainModel;
 
-namespace Wox.Workspacer.Mock.Service
+namespace Wox.EasyHelper.Test.Mock.Service
 {
     public class WoxContextServiceMock : IWoxContextService
     {
