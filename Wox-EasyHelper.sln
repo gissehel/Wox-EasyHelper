@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wox.EasyHelper", "Wox.EasyHelper\Wox.EasyHelper.csproj", "{32426F6C-9E74-4113-8387-F552B87AEE02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wox.EasyHelper.Test.Mock", "Wox.EasyHelper.Test.Mock\Wox.EasyHelper.Test.Mock.csproj", "{550505CE-DADE-4ECB-9C9E-71D5D683AC05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32426F6C-9E74-4113-8387-F552B87AEE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32426F6C-9E74-4113-8387-F552B87AEE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32426F6C-9E74-4113-8387-F552B87AEE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32426F6C-9E74-4113-8387-F552B87AEE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550505CE-DADE-4ECB-9C9E-71D5D683AC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550505CE-DADE-4ECB-9C9E-71D5D683AC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550505CE-DADE-4ECB-9C9E-71D5D683AC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550505CE-DADE-4ECB-9C9E-71D5D683AC05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE424BB0-F758-4B00-83BF-80BF1D04ADD8}
+	EndGlobalSection
+EndGlobal

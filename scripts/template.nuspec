@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>{package_name}</id>
+    <version>{version}</version>
+    <authors>gissehel</authors>
+    <owners>gissehel</owners>
+    <projectUrl>https://github.com/gissehel/Wox-EasyHelper</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/gissehel/Wox-EasyHelper/master/res/Wox-EasyHelper-32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Wox helper to create Wox plugins.{description_add}</description>
+    <releaseNotes></releaseNotes>
+    <copyright>MIT</copyright>
+    <tags>Wox Plugin Helper</tags>
+    <dependencies>
+      <group>
+        <dependency id="Wox.Plugin" version="[1.2.0.486,1.3)" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="{package_path}\Bin\Release\netstandard2.0\{package_name}.dll" target="lib\netstandard2.0\{package_name}.dll" />
+    <file src="{package_path}\Bin\Release\net35\{package_name}.dll" target="lib\net35\{package_name}.dll" />
+  </files> 
+</package>
