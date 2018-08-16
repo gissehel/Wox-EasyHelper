@@ -21,6 +21,8 @@ namespace Wox.EasyHelper.Test.Mock.Service
 
         public string ApplicationDataPath { get; set; }
 
+        public string ApplicationName { get; set; }
+
         public class CommandLineMock
         {
             public CommandLineMock(string command, string arguments)

@@ -2,6 +2,8 @@
 {
     public interface ISystemService
     {
+        string ApplicationName { get; }
+
         string ApplicationDataPath { get; }
 
         void OpenUrl(string url);
