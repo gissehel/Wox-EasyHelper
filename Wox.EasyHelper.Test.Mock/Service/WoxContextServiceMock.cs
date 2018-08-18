@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Wox.EasyHelper.Core.Service;
 
 namespace Wox.EasyHelper.Test.Mock.Service
@@ -45,7 +46,15 @@ namespace Wox.EasyHelper.Test.Mock.Service
             ActionKeyword = woxQuery.Command;
             if (WoxResultFinderByCommandName.ContainsKey(woxQuery.Command))
             {
-                Results = WoxResultFinderByCommandName[woxQuery.Command].GetResults(woxQuery);
+                var results = WoxResultFinderByCommandName[woxQuery.Command].GetResults(woxQuery);
+                if (results == null)
+                {
+                    Results = new List<WoxResult>();
+                }
+                else
+                {
+                    Results = results.Where(result => result != null);
+                }
             }
             else
             {

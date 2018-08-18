@@ -5,12 +5,12 @@ using Wox.Plugin;
 
 namespace Wox.EasyHelper
 {
-    public abstract class PluginBase<T> : IPlugin where T : IWoxResultFinder
+    public abstract class WoxPlugin : IPlugin
     {
         protected IWoxContextService WoxContextService { get; set; }
         protected IQueryService QueryService { get; set; }
         protected IResultService ResultService { get; set; }
-        protected T ResultFinder { get; set; }
+        protected IWoxResultFinder WoxResultFinder { get; set; }
 
         public void Init(PluginInitContext context)
 
@@ -18,16 +18,16 @@ namespace Wox.EasyHelper
             WoxContextService = new WoxContextService(context);
             QueryService = new QueryService();
             ResultService = new ResultService(WoxContextService);
-            ResultFinder = PrepareContext();
+            WoxResultFinder = PrepareContext();
         }
 
         public List<Result> Query(Query query)
         {
             var woxQuery = QueryService.GetWoxQuery(query);
-            var results = ResultFinder.GetResults(woxQuery);
+            var results = WoxResultFinder.GetResults(woxQuery);
             return ResultService.MapResults(results);
         }
 
-        public abstract T PrepareContext();
+        public abstract IWoxResultFinder PrepareContext();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Wox.EasyHelper
 {
@@ -17,6 +18,8 @@ namespace Wox.EasyHelper
         public string FirstTerm => SearchTerms.Length > 0 ? SearchTerms[0] : string.Empty;
 
         public string GetTermOrEmpty(int index) => (SearchTerms.Length > index) ? SearchTerms[index] : string.Empty;
+
+        public IEnumerable<string> GetSearchTermsStarting(int index) => SearchTerms.Skip(index);
 
         public string GetAllSearchTermsStarting(int index) => (SearchTerms.Length > index) ? string.Join(" ", SearchTerms.Skip(index).ToArray()) : null;
     }

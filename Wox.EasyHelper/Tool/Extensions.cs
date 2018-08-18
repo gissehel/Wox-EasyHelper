@@ -9,6 +9,8 @@ namespace Wox.EasyHelper
 
         public static bool MatchPattern(this string command, string pattern) => string.IsNullOrEmpty(pattern) || command.Contains(pattern);
 
+        public static bool MatchPatternCaseInsensitive(this string command, string pattern) => string.IsNullOrEmpty(pattern) || command.ToLowerInvariant().MatchPattern(pattern.ToLowerInvariant());
+
         public static T GetAndSetDefault<S, T>(this Dictionary<S, T> self, S key, T defaultValue)
         {
             if (!self.ContainsKey(key))

@@ -4,14 +4,21 @@ using Wox.EasyHelper.Core.Service;
 
 namespace Wox.EasyHelper
 {
-    public abstract class WoxResultFinderBase : IWoxResultFinder
+    public abstract class WoxResultFinder : IWoxResultFinder
     {
         protected IWoxContextService WoxContextService { get; set; }
 
-        public WoxResultFinderBase(IWoxContextService woxContextService)
+        public WoxResultFinder(IWoxContextService woxContextService)
         {
             WoxContextService = woxContextService;
         }
+
+        protected WoxResult GetNoActionResult(string title, string subTitle) => new WoxResult
+        {
+            Title = title,
+            SubTitle = subTitle,
+            ShouldClose = false,
+        };
 
         protected WoxResult GetActionResult(string title, string subTitle, Action action) => new WoxResult
         {
@@ -48,16 +55,16 @@ namespace Wox.EasyHelper
         protected Dictionary<string, List<CommandInfo>> CommandInfosByPath { get; set; } = new Dictionary<string, List<CommandInfo>>();
         protected Dictionary<string, CommandInfo> DefaultCommandInfoByPath { get; set; } = new Dictionary<string, CommandInfo>();
 
-        protected void AddDefaultCommand(Func<WoxQuery, int, IEnumerable<WoxResult>> func)
+        protected void AddDefaultCommand(ResultGetter func)
             => AddDefaultCommand(func, string.Empty);
 
-        protected void AddDefaultCommand(Func<WoxQuery, int, IEnumerable<WoxResult>> func, string path)
+        protected void AddDefaultCommand(ResultGetter func, string path)
             => AddCommand(null, null, null, null, func, path);
 
-        protected void AddCommand(string name, string title, string subtitle, Func<WoxQuery, int, IEnumerable<WoxResult>> func)
+        protected void AddCommand(string name, string title, string subtitle, ResultGetter func)
             => AddCommand(name, title, subtitle, func, string.Empty);
 
-        protected void AddCommand(string name, string title, string subtitle, Func<WoxQuery, int, IEnumerable<WoxResult>> func, string path)
+        protected void AddCommand(string name, string title, string subtitle, ResultGetter func, string path)
             => AddCommand(name, title, subtitle, null, func, path);
 
         protected void AddCommand(string name, string title, string subtitle, Action action)
@@ -66,7 +73,7 @@ namespace Wox.EasyHelper
         protected void AddCommand(string name, string title, string subtitle, Action action, string path)
             => AddCommand(name, title, subtitle, action, null, path);
 
-        private void AddCommand(string name, string title, string subtitle, Action action, Func<WoxQuery, int, IEnumerable<WoxResult>> func, string path)
+        private void AddCommand(string name, string title, string subtitle, Action action, ResultGetter func, string path)
         {
             var actualPath = string.IsNullOrEmpty(path) ? string.Empty : path;
             if (name == null)
