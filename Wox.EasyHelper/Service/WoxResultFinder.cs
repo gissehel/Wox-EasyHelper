@@ -13,6 +13,10 @@ namespace Wox.EasyHelper
             WoxContextService = woxContextService;
         }
 
+        public virtual void Init()
+        {
+        }
+
         protected WoxResult GetNoActionResult(string title, string subTitle) => new WoxResult
         {
             Title = title,
@@ -186,6 +190,10 @@ namespace Wox.EasyHelper
                 }
             }
             return results;
+        }
+
+        public virtual void Dispose()
+        {
         }
     }
 }

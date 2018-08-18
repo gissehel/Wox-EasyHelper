@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Wox.EasyHelper.Core.Service;
 using Wox.EasyHelper.Service;
 using Wox.Plugin;
 
 namespace Wox.EasyHelper
 {
-    public abstract class WoxPlugin : IPlugin
+    public abstract class WoxPlugin : IPlugin, IDisposable
     {
         protected IWoxContextService WoxContextService { get; set; }
         protected IQueryService QueryService { get; set; }
@@ -19,6 +20,7 @@ namespace Wox.EasyHelper
             QueryService = new QueryService();
             ResultService = new ResultService(WoxContextService);
             WoxResultFinder = PrepareContext();
+            WoxResultFinder.Init();
         }
 
         public List<Result> Query(Query query)
@@ -29,5 +31,10 @@ namespace Wox.EasyHelper
         }
 
         public abstract IWoxResultFinder PrepareContext();
+
+        public void Dispose()
+        {
+            WoxResultFinder.Dispose();
+        }
     }
 }
