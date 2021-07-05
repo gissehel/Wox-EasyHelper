@@ -24,7 +24,7 @@ jobs:
               run: scripts\compile.cmd
       
             - name: Create package
-              run: scripts\create-package.cmd 
+              run: scripts\create-package.cmd "dev"
       
             - name: Publish artifacts
               uses: actions/upload-artifact@v1.0.0
