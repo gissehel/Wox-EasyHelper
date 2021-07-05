@@ -34,7 +34,7 @@ jobs:
 
             - name: Create package (release ${{ env.REFNAME }})
               if: "contains(github.ref, 'refs/tags')"
-              run: scripts\create-package.cmd ${{ env.REFNAME }} ${{ secrets.NUGET_API_KEY }}
+              run: scripts\create-package.cmd ${{ env.REFNAME }} release ${{ secrets.NUGET_API_KEY }}
 
             - name: List directory
               run: dir
