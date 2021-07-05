@@ -20,8 +20,7 @@ jobs:
             - name: "Set env vars"
               run: |
                   # REFNAME : the version number if it's a tag, or the branch name if it's a branch
-                  echo|set /p="REFNAME=" >> "%GITHUB_ENV%"
-                  echo ${{ github.ref }} | scripts\sed.exe -e "s/tags\/v/tags\//; s/.*\///" >> "%GITHUB_ENV%"
+                  scripts\set-refname-in-env.cmd "${{ github.ref }}" "%GITHUB_ENV%"
 
             - name: Restore NuGet packages
               run: nuget restore ${{ env.SOLUTION_NAME }}
