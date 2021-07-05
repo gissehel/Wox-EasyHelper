@@ -34,6 +34,12 @@ SET BUILD_DATE=%year%%month%%day%-%hour%%minute%%second%
 GOTO FIN
 
 :SET_NUGET_PACKAGE_VERSION
+IF NOT %VERSION%==dev GOTO NODEV
+
+for /f "usebackq tokens=1* delims=: " %%i in (`scripts\sed.exe -e "s/.*<\(.*\)>\(.*\)<.*/\1:\2/g"  Wox.EasyHelper\Wox.EasyHelper.csproj`) do (
+  if /i "%%i"=="Version" set VERSION=%%j
+)
+:NODEV
 SET NUGET_PACKAGE_VERSION=%VERSION%
 IF NOT %NUGET_PACKAGE_VERSION:~-8,8%==SNAPSHOT GOTO IS_SNAPSHOT
 IF %SNAPSHOT%==SNAPSHOT GOTO IS_SNAPSHOT
