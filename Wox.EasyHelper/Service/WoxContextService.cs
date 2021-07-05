@@ -15,11 +15,11 @@ namespace Wox.EasyHelper.Service
 
         public string ActionKeyword => Context.CurrentPluginMetadata.ActionKeyword;
 
-        public string Seperater => Query.Seperater;
+        public string Seperater => Query.TermSeperater;
 
         public void ChangeQuery(string query) => Context.API.ChangeQuery(query);
 
-        public string IconPath => Context.CurrentPluginMetadata.FullIcoPath;
+        public string IconPath => Context.CurrentPluginMetadata.IcoPath;
 
         public WoxResult GetActionResult(string title, string subTitle, Action action) => new WoxResult
         {

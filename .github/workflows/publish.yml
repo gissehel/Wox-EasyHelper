@@ -1,0 +1,33 @@
+name: publish
+
+on:
+    push:
+        branches:
+            - master
+        tags:
+            - 'v*'
+
+env:
+    SOLUTION_NAME: 'Wox-EasyHelper.sln' # set this to your application's name
+
+jobs:
+    build:
+        name: Build and deploy
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Restore NuGet packages
+              run: nuget restore ${{ env.SOLUTION_NAME }}
+
+            - name: Build
+              run: scripts\compile.cmd
+      
+            - name: Create package
+              run: scripts\create-package.cmd 
+      
+            - name: Publish artifacts
+              uses: actions/upload-artifact@v1.0.0
+              with:
+                name: Wox.EasyHelper
+                path: Wox.EasyHelper.*.nupkg

@@ -4,7 +4,7 @@ SET VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe
 
 if exist "%VSWHERE%" (
   for /f "usebackq tokens=1* delims=: " %%i in (`"%VSWHERE%" -latest -products * -requires Microsoft.Component.MSBuild`) do (
-    if /i "%%i"=="installationPath" set MSBUILD=%%j\MSBuild\15.0\Bin\MSBuild.exe
+    if /i "%%i"=="installationPath" set MSBUILD=%%j\MSBuild\Current\Bin\MSBuild.exe
   )
 ) ELSE (
   set "MSBUILD=%ProgramFiles(x86)%\MSBuild\14.0\Bin\MsBuild.exe"
