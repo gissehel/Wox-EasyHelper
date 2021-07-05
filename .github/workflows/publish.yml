@@ -30,7 +30,7 @@ jobs:
               run: dir
 
             - name: Publish artifacts
-              uses: actions/upload-artifact@v1.0.0
+              uses: actions/upload-artifact@v2
               with:
                 name: Wox.EasyHelper
                 path: Wox.EasyHelper.*.nupkg
