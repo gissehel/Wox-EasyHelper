@@ -8,5 +8,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Wox.EasyHelper\Wox.EasyHelper.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Wox-EasyHelper-64.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>  
 
 </Project>
