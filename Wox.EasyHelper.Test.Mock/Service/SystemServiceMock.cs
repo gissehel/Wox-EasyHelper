@@ -15,9 +15,16 @@ namespace Wox.EasyHelper.Test.Mock.Service
             CommandLineStarted.Add(new CommandLineMock(command, arguments));
         }
 
+        public void CopyTextToClipboard(string text)
+        {
+            TextCopiedToClipboard.Add(text);
+        }
+
         public List<string> UrlOpened { get; private set; } = new List<string>();
 
         public List<CommandLineMock> CommandLineStarted { get; private set; } = new List<CommandLineMock>();
+
+        public List<string> TextCopiedToClipboard { get; private set; } = new List<string>();
 
         public string ApplicationDataPath { get; set; }
 

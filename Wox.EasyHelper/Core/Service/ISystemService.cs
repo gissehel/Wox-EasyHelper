@@ -9,5 +9,7 @@
         void OpenUrl(string url);
 
         void StartCommandLine(string command, string arguments);
+
+        void CopyTextToClipboard(string text);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows;
 using Wox.EasyHelper.Core.Service;
 
 namespace Wox.EasyHelper.Service
@@ -75,6 +76,11 @@ namespace Wox.EasyHelper.Service
             {
                 // TODO : Find something usefull here...
             }
+        }
+
+        public void CopyTextToClipboard(string text)
+        {
+            Clipboard.SetText(text);
         }
     }
 }
